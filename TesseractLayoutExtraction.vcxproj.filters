@@ -621,6 +621,18 @@
     <ClCompile Include="VersyPDF\sources\versypdf\sources\VSXref.c">
       <Filter>VersyPDF</Filter>
     </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\treeitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\treemodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\dirent.h">
@@ -1223,5 +1235,26 @@
     <ClInclude Include="VersyPDF\sources\versypdf\VSTypes.h">
       <Filter>VersyPDF</Filter>
     </ClInclude>
+    <ClInclude Include="Source\treeitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\treemodel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TesseractLayoutExtraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\editabletreemodel.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Source\default.txt" />
   </ItemGroup>
 </Project>

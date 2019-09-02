@@ -23,32 +23,32 @@
     <ProjectGuid>{6F813C36-8625-4BFD-A49F-CD7FF28E770F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TesseractLayoutExtraction</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -108,14 +108,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\opencv330\opencv\build\include;$(ProjectDir)VersyPDF\sources\versypdf;$(ProjectDir)VersyPDF\sources\flate;$(ProjectDir)VersyPDF\sources\jpeg;$(ProjectDir)VersyPDF\sources\freetype;$(ProjectDir)VersyPDF\sources\png;$(ProjectDir)VersyPDF\sources\tiff;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.8\msvc2015_64\include\;F:\opencv-4.0.1\build\include\;$(ProjectDir)VersyPDF\sources\versypdf;$(ProjectDir)VersyPDF\sources\flate;$(ProjectDir)VersyPDF\sources\jpeg;$(ProjectDir)VersyPDF\sources\freetype;$(ProjectDir)VersyPDF\sources\png;$(ProjectDir)VersyPDF\sources\tiff;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\opencv330\opencv\build\x64\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world330d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.8\msvc2015_64\lib;F:\opencv-4.0.1\build\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world401d.lib;Qt5Core.lib;Qt5Widgets.lib;Qt5Gui.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -159,6 +159,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source/TesseractLayoutExtraction.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\mainwindow.cpp" />
+    <ClCompile Include="Source\treeitem.cpp" />
+    <ClCompile Include="Source\treemodel.cpp" />
     <ClCompile Include="Source\Utils.cpp" />
     <ClCompile Include="VersyPDF\sources\flate\adler32.c" />
     <ClCompile Include="VersyPDF\sources\flate\crc32.c" />
@@ -362,6 +366,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\dirent.h" />
+    <ClInclude Include="Source\mainwindow.h" />
+    <ClInclude Include="Source\TesseractLayoutExtraction.h" />
+    <ClInclude Include="Source\treeitem.h" />
+    <ClInclude Include="Source\treemodel.h" />
+    <ClInclude Include="Source\ui_mainwindow.h" />
     <ClInclude Include="Source\Utils.hpp" />
     <ClInclude Include="VersyPDF\sources\flate\deflate.h" />
     <ClInclude Include="VersyPDF\sources\flate\infblock.h" />
@@ -561,6 +570,12 @@
     <ClInclude Include="VersyPDF\sources\versypdf\VSPlatform.h" />
     <ClInclude Include="VersyPDF\sources\versypdf\VSThreadA.h" />
     <ClInclude Include="VersyPDF\sources\versypdf\VSTypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\editabletreemodel.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Source\default.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

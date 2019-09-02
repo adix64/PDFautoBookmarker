@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TesseractLayoutExtraction", "TesseractLayoutExtraction.vcxproj", "{6F813C36-8625-4BFD-A49F-CD7FF28E770F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A4670B4-AAA5-49C4-A25B-6F871087A2E6}"
+	ProjectSection(SolutionItems) = preProject
+		Source\ui_mainwindow.h = Source\ui_mainwindow.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
