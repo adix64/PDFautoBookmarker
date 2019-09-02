@@ -633,6 +633,9 @@
     <ClCompile Include="Source\treemodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\zoomer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\dirent.h">
@@ -1248,6 +1251,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\TesseractLayoutExtraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\zoomer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -55,7 +55,7 @@
 #include <QtCore/qsignalmapper.h>
 #include <QtGui/qpixmap.h>
 #include <QtWidgets/QGraphicsPixmapItem>
-
+#include "zoomer.h"
 MainWindow::MainWindow(QWidget* parent)
 	: QMainWindow(parent)
 {
@@ -63,10 +63,10 @@ MainWindow::MainWindow(QWidget* parent)
 
 	const QStringList headers({ tr("Title"), tr("Description") });
 
-	QFile file(":/default.txt");
-	file.open(QIODevice::ReadOnly);
-	TreeModel* model = new TreeModel(headers, file.readAll());
-	file.close();
+	/*QFile file(":/default.txt");
+	file.open(QIODevice::ReadOnly);*/
+	TreeModel* model = new TreeModel(headers, QByteArray(0));// , file.readAll());
+	//file.close();
 
 	view->setModel(model);
 	for (int column = 0; column < model->columnCount(); ++column)
@@ -144,7 +144,8 @@ void MainWindow::LoadFolder()
 		pages[i]->load(filenames[i].c_str());
 		pageItems.push_back(new QGraphicsPixmapItem(QPixmap::fromImage(*pages[i])));
 	}
-	
+	Graphics_view_zoom* z = new Graphics_view_zoom(graphicsView);
+	z->set_modifiers(Qt::NoModifier);
 	//QGraphicsView* view = new QGraphicsView(scene);
 	mScene->addItem(pageItems[0]);
 	//((QScrollBar*)graphicsView->scrollBarWidgets[0])->

@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -164,6 +164,7 @@
     <ClCompile Include="Source\treeitem.cpp" />
     <ClCompile Include="Source\treemodel.cpp" />
     <ClCompile Include="Source\Utils.cpp" />
+    <ClCompile Include="Source\zoomer.cpp" />
     <ClCompile Include="VersyPDF\sources\flate\adler32.c" />
     <ClCompile Include="VersyPDF\sources\flate\crc32.c" />
     <ClCompile Include="VersyPDF\sources\flate\deflate.c" />
@@ -372,6 +373,7 @@
     <ClInclude Include="Source\treemodel.h" />
     <ClInclude Include="Source\ui_mainwindow.h" />
     <ClInclude Include="Source\Utils.hpp" />
+    <ClInclude Include="Source\zoomer.h" />
     <ClInclude Include="VersyPDF\sources\flate\deflate.h" />
     <ClInclude Include="VersyPDF\sources\flate\infblock.h" />
     <ClInclude Include="VersyPDF\sources\flate\infcodes.h" />
