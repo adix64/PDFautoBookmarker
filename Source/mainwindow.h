@@ -52,7 +52,7 @@
 #define MAINWINDOW_H
 
 #include "ui_mainwindow.h"
-
+#include "TesseractLayoutExtraction.h"
 #include <QtWidgets/qmainwindow.h>
 
 class MainWindow : public QMainWindow, private Ui::MainWindow
@@ -62,10 +62,10 @@ class MainWindow : public QMainWindow, private Ui::MainWindow
 	std::vector<QGraphicsPixmapItem*> pageItems;
 	QGraphicsPixmapItem* currentItem = NULL;
 	QGraphicsScene* mScene;
+	LayoutAnalysisResult result;
 	int currentPageIndex = 0;
 public:
 	MainWindow(QWidget* parent = nullptr);
-
 public slots:
 	void updateActions();
 
@@ -76,8 +76,10 @@ private slots:
 	bool removeColumn();
 	void removeRow();
 	void LoadFolder();
+	void SaveBookmarked();
 	void PrevPage();
 	void NextPage();
+	void onTreeWidgetItemDoubleClicked(QTreeWidgetItem* item, int column);
 };
 
 #endif // MAINWINDOW_H

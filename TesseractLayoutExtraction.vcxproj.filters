@@ -627,12 +627,6 @@
     <ClCompile Include="Source\mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\treeitem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\treemodel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\zoomer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1237,12 +1231,6 @@
     </ClInclude>
     <ClInclude Include="VersyPDF\sources\versypdf\VSTypes.h">
       <Filter>VersyPDF</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\treeitem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\treemodel.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\ui_mainwindow.h">
       <Filter>Header Files</Filter>

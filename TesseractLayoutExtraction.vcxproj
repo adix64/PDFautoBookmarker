@@ -161,8 +161,6 @@
     <ClCompile Include="Source/TesseractLayoutExtraction.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\mainwindow.cpp" />
-    <ClCompile Include="Source\treeitem.cpp" />
-    <ClCompile Include="Source\treemodel.cpp" />
     <ClCompile Include="Source\Utils.cpp" />
     <ClCompile Include="Source\zoomer.cpp" />
     <ClCompile Include="VersyPDF\sources\flate\adler32.c" />
@@ -369,8 +367,6 @@
     <ClInclude Include="Source\dirent.h" />
     <ClInclude Include="Source\mainwindow.h" />
     <ClInclude Include="Source\TesseractLayoutExtraction.h" />
-    <ClInclude Include="Source\treeitem.h" />
-    <ClInclude Include="Source\treemodel.h" />
     <ClInclude Include="Source\ui_mainwindow.h" />
     <ClInclude Include="Source\Utils.hpp" />
     <ClInclude Include="Source\zoomer.h" />
