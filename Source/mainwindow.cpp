@@ -58,7 +58,7 @@ void MainWindow::onTreeWidgetItemClicked(QTreeWidgetItem* item, int column)
 	const char* pstr = item->text(1).toUtf8().constData();
 	int pageNum;
 	sscanf(pstr, "Page %d", &pageNum);
-	SetCurrentPage(pageNum);
+	SetCurrentPage(pageNum - 1);
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -76,7 +76,7 @@ void MainWindow::RevertAllChanges()
 			continue;
 
 		auto newItem = new QTreeWidgetItem((QTreeWidget*)0, QStringList(QString(result.outlines[i].c_str())));
-		newItem->setText(1, QString("Page %1").arg(result.pageNumbers[i]));
+		newItem->setText(1, QString("Page %1").arg(result.pageNumbers[i] + 1));
 		newItem->setFlags(newItem->flags() | Qt::ItemFlag::ItemIsEditable);
 		items.append(newItem);
 
@@ -126,10 +126,8 @@ void MainWindow::PrevPage()
 		return;
 	if (currentPageIndex > 0)
 	{
-		mScene->removeItem(currentItem);
 		currentPageIndex--;
-		currentItem = pageItems[currentPageIndex];
-		mScene->addItem(currentItem);
+		SetCurrentPage(currentPageIndex);
 	}
 }
 
@@ -142,7 +140,7 @@ void MainWindow::SetCurrentPage(int idx)
 	mScene->addItem(currentItem);
 	char pgName[64];
 	memset(pgName, 0, 64);
-	printf(pgName, "Page: %d / %d", idx + 1, pages.size());
+	sprintf(pgName, "Page: %d / %d", idx + 1, pages.size());
 	pageLabel->setText(QString(pgName));
 }
 
@@ -215,7 +213,7 @@ void MainWindow::LoadFolder()
 			|| result.outlines[i].size() < minCharCount->value() )
 			continue;
 		auto newItem = new QTreeWidgetItem((QTreeWidget*)0, QStringList(QString(result.outlines[i].c_str())));
-		newItem->setText(1, QString("Page %1").arg(result.pageNumbers[i]));
+		newItem->setText(1, QString("Page %1").arg(result.pageNumbers[i] + 1));
 		newItem->setFlags(newItem->flags() | Qt::ItemFlag::ItemIsEditable);
 		items.append(newItem);
 
@@ -227,6 +225,10 @@ void MainWindow::LoadFolder()
 	graphicsView->show();
 	openImageFolderPushBtn->setText("Open Folder with Scanned Doc. Images ...");
 	openImageFolderPushBtn->setEnabled(true);
+	char pgName[64];
+	memset(pgName, 0, 64);
+	sprintf(pgName, "Page: 1 / %d", pages.size());
+	pageLabel->setText(QString(pgName));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
