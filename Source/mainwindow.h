@@ -51,6 +51,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QtCore/QTimer>
 #include "ui_mainwindow.h"
 #include "TesseractLayoutExtraction.h"
 #include <QtWidgets/qmainwindow.h>
@@ -65,21 +66,25 @@ class MainWindow : public QMainWindow, private Ui::MainWindow
 	LayoutAnalysisResult result;
 	int currentPageIndex = 0;
 public:
+	void SetCurrentPage(int idx);
 	MainWindow(QWidget* parent = nullptr);
+	void _deleteRecursiveTreeItem(QTreeWidgetItem* parent, int level);
+	void ResetTree(QTreeWidget*& treeWidget);
 public slots:
 	void updateActions();
 
 private slots:
 	void insertChild();
-	bool insertColumn();
+	//bool insertColumn();
 	void insertRow();
-	bool removeColumn();
+	//bool removeColumn();
 	void removeRow();
 	void LoadFolder();
+	void RevertAllChanges();
 	void SaveBookmarked();
 	void PrevPage();
 	void NextPage();
-	void onTreeWidgetItemDoubleClicked(QTreeWidgetItem* item, int column);
+	void onTreeWidgetItemClicked(QTreeWidgetItem* item, int column);
 };
 
 #endif // MAINWINDOW_H
